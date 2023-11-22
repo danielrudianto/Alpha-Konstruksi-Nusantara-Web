@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2>Jasa Kami</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <mat-chip-listbox aria-label="Service selection" class="mb-3">
+        <mat-chip-option [selected]="index == 0" (click)="index = 0"
+          >Bore Piling</mat-chip-option
+        >
+        <mat-chip-option [selected]="index == 1" (click)="index = 1"
+          >Stauss Piling</mat-chip-option
+        >
+      </mat-chip-listbox>
+    </div>
+  </div>
+  <div class="row" [@flyInOut]="index == 0 ? 'in' : ''">
+    <div class="col-8">
+      <p>
+        Layanan bore piling kami membawa fondasi konstruksi Anda ke tingkat
+        berikutnya. Dengan fokus pada ketepatan dan keandalan, kami menggunakan
+        teknologi mutakhir dan tim ahli untuk menjalankan proyek bore piling
+        dengan keahlian tinggi. Dengan lebih dari satu dekade pengalaman di
+        berbagai proyek di seluruh wilayah Indonesia, kami memahami betul
+        kebutuhan unik setiap proyek. Fondasi kokoh yang kami hasilkan tidak
+        hanya memenuhi standar tertinggi, tetapi juga memberikan dasar yang
+        andal untuk kesuksesan proyek Anda
+      </p>
+    </div>
+    <div class="col-4">
+      <div class="service-wrapper">
+        <img src="/assets/images/sck-semarang-02.webp" alt="" class="w-100" />
+      </div>
+    </div>
+  </div>
+  <div class="row" [@flyInOut]="index == 1 ? 'in' : ''">
+    <div class="col-8">
+      <p>
+        Kami menyajikan layanan stauss piling dengan dedikasi tinggi untuk
+        fondasi yang kuat dan tahan lama. Teknologi canggih dan tim ahli kami
+        memastikan penerapan metode stauss piling yang efisien, memenuhi standar
+        ketat, dan menghasilkan fondasi yang kokoh. Dengan pengalaman lebih dari
+        satu dekade, kami telah menjadi pilihan utama dalam memberikan solusi
+        fondasi yang andal untuk berbagai proyek konstruksi di seluruh
+        Indonesia. Keunggulan kami terletak pada inovasi, ketepatan waktu, dan
+        komitmen terhadap kepuasan pelanggan.
+      </p>
+    </div>
+    <div class="col-4">
+      <div class="service-wrapper">
+        <img src="/assets/images/sck-semarang-02.webp" alt="" class="w-100" />
+      </div>
+    </div>
+  </div>
+</div>

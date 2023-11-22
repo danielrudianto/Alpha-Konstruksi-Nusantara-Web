@@ -1,0 +1,10 @@
+<div class="stat-wrapper">
+  <app-stat-card
+    *ngFor="let stat of stats"
+    [icon]="stat.icon"
+    [number]="stat.number"
+    [subtitle]="stat.subtitle"
+    style="flex: 1 1 0px"
+  >
+  </app-stat-card>
+</div>

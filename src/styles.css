@@ -1,0 +1,37 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins/Poppins-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins/Poppins-Black.ttf");
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/assets/fonts/Poppins/Poppins-ExtraBold.ttf");
+  font-weight: 800;
+}
+
+html body {
+  background-color: white;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

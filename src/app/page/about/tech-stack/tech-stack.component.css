@@ -1,0 +1,22 @@
+.tech-stack__wrapper {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  /* color filter to make the image black and white */
+  filter: grayscale(100%);
+  transition: 0.3s all ease;
+}
+
+.carousel img:hover {
+  filter: grayscale(0%);
+  transition: 0.3s all ease;
+}

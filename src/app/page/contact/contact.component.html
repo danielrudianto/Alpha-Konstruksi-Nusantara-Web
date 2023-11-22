@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mb-3">Kontak Alpha Konstruksi Nusantara</h2>
+      <p>
+        Punya pertanyaan atau butuh bantuan? Kami di sini untuk membantu! Jangan
+        ragu untuk menghubungi kami dengan pertanyaan atau keperluan apa pun.
+        Tim kami di PT Alpha Konstruksi Nusantara siap memberikan dukungan dan
+        informasi yang Anda butuhkan. Kepuasan Anda adalah prioritas kami, dan
+        kami berharap dapat membantu Anda dalam perjalanan konstruksi Anda.
+        Silakan hubungi kami melalui formulir di bawah ini, email, atau beri
+        kami panggilan. Kami menghargai kemitraan Anda dan berkomitmen untuk
+        membuat pengalaman Anda bersama kami lancar dan menyenangkan.
+      </p>
+
+      <form [formGroup]="contactFormGroup">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Nama</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label>Pesan</mat-label>
+          <textarea matInput formControlName="message"></textarea>
+        </mat-form-field>
+
+        <button class="submit-button">
+          <mat-icon>send</mat-icon>&nbsp;Kirimkan
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
