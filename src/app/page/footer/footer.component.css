@@ -1,0 +1,40 @@
+footer {
+  background-color: white;
+  color: #242424;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a,
+p {
+  color: #242424;
+  text-decoration: none;
+  font-family: "Poppins";
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #242424;
+  width: 100%;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}

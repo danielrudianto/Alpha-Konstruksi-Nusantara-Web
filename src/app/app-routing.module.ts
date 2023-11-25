@@ -6,6 +6,7 @@ import {
   DialogEntryComponent,
   ProjectDetailComponent,
 } from './page/project-detail/project-detail.component';
+import { BlogDetailComponent } from './page/blog-detail/blog-detail.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,19 @@ const routes: Routes = [
     component: LandingComponent,
     children: [
       {
-        path: 'Project/:id',
+        path: 'Project/088',
+        component: DialogEntryComponent,
+      },
+      {
+        path: 'Project/041',
+        component: DialogEntryComponent,
+      },
+      {
+        path: 'Project/091',
+        component: DialogEntryComponent,
+      },
+      {
+        path: 'Project/104',
         component: DialogEntryComponent,
       },
     ],
@@ -21,6 +34,10 @@ const routes: Routes = [
   {
     path: 'Blog',
     component: BlogComponent,
+  },
+  {
+    path: 'Blog/:id/:title',
+    component: BlogDetailComponent,
   },
 ];
 

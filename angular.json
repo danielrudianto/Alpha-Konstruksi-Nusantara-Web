@@ -24,6 +24,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/aos/dist/aos.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -88,6 +89,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/aos/dist/aos.css",
               "src/styles.css"
             ],
             "scripts": [

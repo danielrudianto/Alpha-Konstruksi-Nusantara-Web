@@ -22,16 +22,23 @@
   src: url("/assets/fonts/Poppins/Poppins-ExtraBold.ttf");
   font-weight: 800;
 }
-
-html body {
-  background-color: white;
-}
+background-color: white;
 
 html,
 body {
   height: 100%;
+  width: 100%;
+  background-color: white;
 }
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.slick-track {
+  display: flex !important;
+}
+
+.slick-slide {
+  align-items: stretch !important;
 }

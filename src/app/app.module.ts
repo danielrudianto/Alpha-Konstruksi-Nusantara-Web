@@ -29,6 +29,9 @@ import { FooterComponent } from './page/footer/footer.component';
 import { ServicesComponent } from './page/services/services.component';
 import { MatChipsModule } from '@angular/material/chips';
 
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BlogDetailComponent } from './page/blog-detail/blog-detail.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +50,7 @@ import { MatChipsModule } from '@angular/material/chips';
     ProjectDetailComponent,
     FooterComponent,
     ServicesComponent,
+    BlogDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,7 @@ import { MatChipsModule } from '@angular/material/chips';
     ReactiveFormsModule,
     MatInputModule,
     MatChipsModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

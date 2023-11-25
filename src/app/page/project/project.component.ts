@@ -35,10 +35,35 @@ export class ProjectComponent implements OnInit {
 
   slideConfig = {
     slidesToShow:
-      window.innerWidth > 768 ? 3 : window.innerWidth > 576 ? 2 : 1.2,
+      window.innerWidth > 1400
+        ? 4
+        : window.innerWidth > 768
+        ? 3
+        : window.innerWidth > 576
+        ? 2
+        : 1.2,
     slidesToScroll: 1,
+    infinite: false,
     autoplay: false,
+    arrows: false,
   };
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.addEventListener('resize', () => {
+      this.slideConfig = {
+        slidesToShow:
+          window.innerWidth > 992
+            ? 4
+            : window.innerWidth > 768
+            ? 3
+            : window.innerWidth > 576
+            ? 2
+            : 1.2,
+        slidesToScroll: 1,
+        infinite: false,
+        autoplay: false,
+        arrows: false,
+      };
+    });
+  }
 }

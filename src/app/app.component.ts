@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as Aos from 'aos';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,5 @@ import * as Aos from 'aos';
 export class AppComponent implements OnInit {
   title = 'alpha-konstruksi-nusantara-web';
 
-  ngOnInit() {
-    Aos.init();
-  }
+  ngOnInit() {}
 }

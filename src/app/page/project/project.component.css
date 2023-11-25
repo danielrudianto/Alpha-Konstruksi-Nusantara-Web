@@ -36,3 +36,10 @@ h3 {
 .project-image-wrapper:hover {
   cursor: url("/assets/images/cursor.png"), auto;
 }
+
+.slick-slide {
+  height: inherit !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}

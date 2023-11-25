@@ -6,55 +6,39 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mb-5">
   <div class="row">
     <div class="col-12">
       <mat-chip-listbox aria-label="Service selection" class="mb-3">
-        <mat-chip-option [selected]="index == 0" (click)="index = 0"
-          >Bore Piling</mat-chip-option
-        >
-        <mat-chip-option [selected]="index == 1" (click)="index = 1"
-          >Stauss Piling</mat-chip-option
+        <mat-chip-option
+          [selected]="index == i"
+          *ngFor="let service of services; index as i"
+          (click)="goToIndex(i)"
+          >{{ service.title }}</mat-chip-option
         >
       </mat-chip-listbox>
     </div>
-  </div>
-  <div class="row" [@flyInOut]="index == 0 ? 'in' : ''">
-    <div class="col-8">
-      <p>
-        Layanan bore piling kami membawa fondasi konstruksi Anda ke tingkat
-        berikutnya. Dengan fokus pada ketepatan dan keandalan, kami menggunakan
-        teknologi mutakhir dan tim ahli untuk menjalankan proyek bore piling
-        dengan keahlian tinggi. Dengan lebih dari satu dekade pengalaman di
-        berbagai proyek di seluruh wilayah Indonesia, kami memahami betul
-        kebutuhan unik setiap proyek. Fondasi kokoh yang kami hasilkan tidak
-        hanya memenuhi standar tertinggi, tetapi juga memberikan dasar yang
-        andal untuk kesuksesan proyek Anda
-      </p>
-    </div>
-    <div class="col-4">
-      <div class="service-wrapper">
-        <img src="/assets/images/sck-semarang-02.webp" alt="" class="w-100" />
-      </div>
-    </div>
-  </div>
-  <div class="row" [@flyInOut]="index == 1 ? 'in' : ''">
-    <div class="col-8">
-      <p>
-        Kami menyajikan layanan stauss piling dengan dedikasi tinggi untuk
-        fondasi yang kuat dan tahan lama. Teknologi canggih dan tim ahli kami
-        memastikan penerapan metode stauss piling yang efisien, memenuhi standar
-        ketat, dan menghasilkan fondasi yang kokoh. Dengan pengalaman lebih dari
-        satu dekade, kami telah menjadi pilihan utama dalam memberikan solusi
-        fondasi yang andal untuk berbagai proyek konstruksi di seluruh
-        Indonesia. Keunggulan kami terletak pada inovasi, ketepatan waktu, dan
-        komitmen terhadap kepuasan pelanggan.
-      </p>
-    </div>
-    <div class="col-4">
-      <div class="service-wrapper">
-        <img src="/assets/images/sck-semarang-02.webp" alt="" class="w-100" />
-      </div>
+    <div class="col-12">
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+        (afterChange)="afterChange($event)"
+      >
+        <div ngxSlickItem class="row d-flex" *ngFor="let service of services">
+          <div
+            class="col-xl-7 col-lg-8 col-md-6 col-sm-10 col-12 order-md-1 order-2"
+          >
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
+          </div>
+          <div
+            class="col-xl-5 col-lg-4 col-md-6 col-sm-10 col-12 order-md-2 order-1"
+          >
+            <img [src]="service.img" class="w-100 service-image" />
+          </div>
+        </div>
+      </ngx-slick-carousel>
     </div>
   </div>
 </div>
