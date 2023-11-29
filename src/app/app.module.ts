@@ -28,9 +28,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './page/footer/footer.component';
 import { ServicesComponent } from './page/services/services.component';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BlogDetailComponent } from './page/blog-detail/blog-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SafePipe } from 'src/pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,7 @@ import { BlogDetailComponent } from './page/blog-detail/blog-detail.component';
     FooterComponent,
     ServicesComponent,
     BlogDetailComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -67,8 +71,10 @@ import { BlogDetailComponent } from './page/blog-detail/blog-detail.component';
     MatInputModule,
     MatChipsModule,
     MatPaginatorModule,
+    MatSelectModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [SafePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

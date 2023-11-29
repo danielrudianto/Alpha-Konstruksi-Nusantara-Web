@@ -48,11 +48,12 @@ p {
   left: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .about-image img {
     width: 100%;
     border-radius: 15px;
     position: relative;
+    display: block;
   }
 }
 
@@ -64,18 +65,7 @@ p {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-}
-
-@media screen and (max-width: 768px) {
-  .video-wrapper {
-    aspect-ratio: 25/9;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .video-wrapper {
-    aspect-ratio: 16/9;
-  }
+  background-size: cover;
 }
 
 #myVideo {
@@ -84,6 +74,26 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .video-wrapper {
+    aspect-ratio: 25/9;
+  }
+
+  #myVideo {
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .video-wrapper {
+    aspect-ratio: 16/9;
+  }
 }
 
 .video-overlay {

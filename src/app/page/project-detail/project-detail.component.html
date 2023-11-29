@@ -1,10 +1,19 @@
-<mat-dialog-content class="d-flex flex-column">
-  <div class="action-row">
-    <button mat-icon-button (click)="share()">
-      <mat-icon>share</mat-icon>
-    </button>
-    <button mat-icon-button (click)="close()">
-      <mat-icon>close</mat-icon>
-    </button>
+<div class="action-row">
+  <button mat-icon-button (click)="share()">
+    <mat-icon>share</mat-icon>
+  </button>
+  <button mat-icon-button (click)="close()">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>{{ title }}</h2>
+        <p>{{ location }}</p>
+        <iframe class="w-100 youtube-frame" [src]="url"></iframe>
+      </div>
+    </div>
   </div>
-</mat-dialog-content>
+</div>

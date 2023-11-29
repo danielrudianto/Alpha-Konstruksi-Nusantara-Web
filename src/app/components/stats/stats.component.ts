@@ -11,6 +11,7 @@ export class StatsComponent {
       icon: 'bi bi-kanban',
       number: 120,
       subtitle: 'Proyek',
+      unit: 'Terselesaikan',
     },
     {
       icon: 'bi bi-calendar-date',
@@ -22,6 +23,7 @@ export class StatsComponent {
       icon: 'bi bi-people-fill',
       number: 30,
       subtitle: 'Klien',
+      unit: 'Puas',
     },
   ];
 }

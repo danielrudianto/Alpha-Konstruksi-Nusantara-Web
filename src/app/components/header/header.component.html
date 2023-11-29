@@ -1,12 +1,81 @@
 <nav>
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12 text-center">
+      <div class="col-xl-8 col-lg-8 col-md-6 col-sm-4 col-3 v-center">
         <img
           src="/assets/images/logo.webp"
           alt="Alpha Konstruksi Nusantara"
-          style="height: 60px"
+          style="height: 40px"
         />
+      </div>
+      <div
+        class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-9 v-center position-relative"
+      >
+        <div class="lang-selector" #button *ngIf="lang">
+          <div
+            class="lang-selector__flag"
+            [ngStyle]="{
+              'background-image':
+                'url(/assets/flags/' +
+                (selectedLang == 'English'
+                  ? 'en'
+                  : selectedLang == 'Indonesia'
+                  ? 'id'
+                  : 'zh') +
+                '.flag.svg)'
+            }"
+          ></div>
+          Language
+          {{ selectedLang }}
+          <button mat-icon-button (click)="openDialog()">
+            <mat-icon>expand_more</mat-icon>
+          </button>
+        </div>
+        <div
+          #dialog
+          class="lang-selector__dialog"
+          [ngStyle]="{ display: isDialogOpened ? 'block' : 'none' }"
+        >
+          <button
+            (click)="goToLang('id')"
+            class="lang-selector__item"
+            [disabled]="selectedLang == 'Indonesia'"
+          >
+            <div
+              class="lang-selector__flag"
+              [ngStyle]="{
+                'background-image': 'url(/assets/flags/id.flag.svg)'
+              }"
+            ></div>
+            Indonesia
+          </button>
+          <button
+            (click)="goToLang('en')"
+            class="lang-selector__item"
+            [disabled]="selectedLang == 'English'"
+          >
+            <div
+              class="lang-selector__flag"
+              [ngStyle]="{
+                'background-image': 'url(/assets/flags/en.flag.svg)'
+              }"
+            ></div>
+            English
+          </button>
+          <button
+            (click)="goToLang('zh')"
+            class="lang-selector__item"
+            [disabled]="selectedLang == '中文'"
+          >
+            <div
+              class="lang-selector__flag"
+              [ngStyle]="{
+                'background-image': 'url(/assets/flags/zh.flag.svg)'
+              }"
+            ></div>
+            中文
+          </button>
+        </div>
       </div>
     </div>
   </div>

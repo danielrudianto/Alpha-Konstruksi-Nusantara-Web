@@ -9,4 +9,5 @@ export class StatCardComponent {
   @Input('number') number!: number;
   @Input('subtitle') subtitle!: string;
   @Input('icon') icon!: string;
+  @Input('unit') unit: string = '';
 }

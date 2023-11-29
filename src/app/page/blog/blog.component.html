@@ -1,23 +1,23 @@
 <app-header></app-header>
-<div class="container">
+<div class="container" style="margin-top: 60px">
   <div class="row justify-content-center">
     <div class="col-xl-6 col-lg-6 col-md-8 col-sm-10 col-12">
-      <h1>Blog</h1>
-      <p>
+      <h1 i18n="blog-title">Blog</h1>
+      <p i18n="blog-p-1">
         Kami menyambut Anda di blog resmi PT Alpha Konstruksi Nusantara, tempat
         di mana kami berbagi wawasan, informasi terkini, dan inspirasi seputar
         dunia konstruksi geoteknik di Indonesia. Dalam setiap tulisan, kami
         berusaha menyajikan konten yang bermanfaat, mulai dari panduan praktis
         hingga analisis mendalam tentang tren industri konstruksi.
       </p>
-      <p>
+      <p i18n="blog-p-2">
         Dengan pengalaman lebih dari satu dekade sebagai kontraktor geoteknik
         terkemuka, kami berbagi pengetahuan dan keahlian kami melalui
         artikel-artikel yang dapat membantu Anda memahami lebih baik proses
         konstruksi, mengatasi tantangan teknis, dan tetap terkini dengan inovasi
         terbaru.
       </p>
-      <p>
+      <p i18n="blog-p-3">
         Mari bersama-sama menjelajahi dunia konstruksi geoteknik melalui
         tulisan-tulisan informatif kami. Jangan ragu untuk berbagi pandangan
         Anda atau mengajukan pertanyaan. Kami berharap blog ini dapat menjadi
@@ -25,7 +25,53 @@
       </p>
     </div>
     <div class="col-xl-6 col-lg-6 col-md-4 col-sm-10 col-12">
-        
+      <ngx-slick-carousel
+        class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+      >
+        <div
+          ngxSlickItem
+          class="slide"
+          *ngFor="let slide of featured"
+          [routerLink]="'/Blog/' + slide.id + '/' + encode(slide.title)"
+        >
+          <img
+            [src]="
+              'https://alphakonstruksi.id/api/assets/images/' +
+              slide.id +
+              '.png'
+            "
+            [alt]="slide.display_title"
+            width="100%"
+          />
+          <h3>{{ slide.display_title }}</h3>
+        </div>
+      </ngx-slick-carousel>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div
+      class="col-xl-3 col-lg-4 col-md-6 col-sm-10 col-12 d-flex justify-content-center"
+      *ngFor="let blog of blogs"
+    >
+      <div
+        class="blog-card"
+        [routerLink]="'/Blog/' + blog.id + '/' + encode(blog.title)"
+      >
+        <img
+          [src]="
+            'https://alphakonstruksi.id/api/assets/images/' + blog.id + '.png'
+          "
+          [alt]="blog.display_title"
+          width="100%"
+        />
+        <div class="blog-card__content">
+          <h3>{{ blog.display_title }}</h3>
+          <p>{{ blog.description }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-12">
-      <h2>Jasa Kami</h2>
+      <h2 i18n="service-title">Jasa Kami</h2>
     </div>
   </div>
 </div>
@@ -11,10 +11,18 @@
     <div class="col-12">
       <mat-chip-listbox aria-label="Service selection" class="mb-3">
         <mat-chip-option
-          [selected]="index == i"
-          *ngFor="let service of services; index as i"
-          (click)="goToIndex(i)"
-          >{{ service.title }}</mat-chip-option
+          i18n="bored-chip"
+          [selected]="index == 0"
+          (click)="goToIndex(0)"
+        >
+          Bored Piling</mat-chip-option
+        >
+        <mat-chip-option
+          i18n="strauss-chip"
+          [selected]="index == 1"
+          (click)="goToIndex(1)"
+        >
+          Strauss Piling</mat-chip-option
         >
       </mat-chip-listbox>
     </div>
@@ -25,17 +33,56 @@
         [config]="slideConfig"
         (afterChange)="afterChange($event)"
       >
-        <div ngxSlickItem class="row d-flex" *ngFor="let service of services">
+        <div ngxSlickItem class="row d-flex">
           <div
             class="col-xl-7 col-lg-8 col-md-6 col-sm-10 col-12 order-md-1 order-2"
           >
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
+            <h3 i18n="bored-title">Bored Piling</h3>
+            <p i18n="bored-description">
+              Layanan bored piling kami membawa fondasi konstruksi Anda ke
+              tingkat berikutnya. Dengan fokus pada ketepatan dan keandalan,
+              kami menggunakan teknologi mutakhir dan tim ahli untuk menjalankan
+              proyek boredpiling dengan keahlian tinggi. Dengan lebih dari satu
+              dekade pengalaman di berbagai proyek di seluruh wilayah Indonesia,
+              kami memahami betul kebutuhan unik setiap proyek. Fondasi kokoh
+              yang kami hasilkan tidak hanya memenuhi standar tertinggi, tetapi
+              juga memberikan dasar yang andal untuk kesuksesan proyek Anda.'
+            </p>
           </div>
           <div
             class="col-xl-5 col-lg-4 col-md-6 col-sm-10 col-12 order-md-2 order-1"
           >
-            <img [src]="service.img" class="w-100 service-image" />
+            <img
+              src="/assets/images/sck-semarang-02.webp"
+              class="w-100 service-image"
+            />
+          </div>
+        </div>
+        <div ngxSlickItem class="row d-flex">
+          <div
+            class="col-xl-7 col-lg-8 col-md-6 col-sm-10 col-12 order-md-1 order-2"
+          >
+            <h3 i18n="strauss-title">Strauss Piling</h3>
+            <p i18n="strauss-description">
+              Kami menyajikan layanan stauss piling dengan dedikasi tinggi untuk
+              fondasi yang kuat dan tahan lama. Teknologi canggih dan tim ahli
+              kami memastikan penerapan metode stauss piling yang efisien,
+              memenuhi standar ketat, dan menghasilkan fondasi yang kokoh.
+              Dengan pengalaman lebih dari satu dekade, kami telah menjadi
+              pilihan utama dalam memberikan solusi fondasi yang andal untuk
+              berbagai proyek konstruksi di seluruh Indonesia. Keunggulan kami
+              terletak pada inovasi, ketepatan waktu, dan komitmen terhadap
+              kepuasan pelanggan.
+            </p>
+          </div>
+          <div
+            class="col-xl-5 col-lg-4 col-md-6 col-sm-10 col-12 order-md-2 order-1"
+          >
+            <img
+              src="/assets/images/pondok-indah-01.webp"
+              alt="Pondok Indah Project"
+              class="w-100 service-image"
+            />
           </div>
         </div>
       </ngx-slick-carousel>

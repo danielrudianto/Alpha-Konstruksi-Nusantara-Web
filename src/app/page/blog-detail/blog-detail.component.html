@@ -1,1 +1,44 @@
-<p>blog-detail works!</p>
+<app-header [lang]="false"></app-header>
+<div class="container" style="margin-top: 60px">
+  <div class="row justify-content-center">
+    <div class="col-12" *ngIf="isLoading">
+      <p>Loading</p>
+    </div>
+    <div
+      class="col-xl-8 col-lg-10 col-md-10 col-sm-12 col-12"
+      *ngIf="!isLoading"
+    >
+      <h1>{{ blog.display_title }}</h1>
+      <img
+        [src]="
+          'https://alphakonstruksi.id/api/assets/images/' + blog.id + '.png'
+        "
+        [alt]="blog.display_title"
+        width="100%"
+        class="mb-3"
+      />
+      <p>{{ blog.description }}</p>
+      <div [innerHTML]="content | safe : 'html'"></div>
+      <div class="keywords">
+        <ul>
+          <li *ngFor="let keyword of keywords">
+            {{ keyword }}
+          </li>
+        </ul>
+      </div>
+      <div class="reference-row">
+        <div class="reference-button reference__previous" *ngIf="prev != null">
+          <a [routerLink]="'/Blog/' + prev.id + '/' + encode(prev.title)">{{
+            prev.display_title
+          }}</a>
+        </div>
+        <div class="reference-button reference__next" *ngIf="next != null">
+          <a [routerLink]="'/Blog/' + next.id + '/' + encode(next.title)">{{
+            next.display_title
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

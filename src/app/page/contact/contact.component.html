@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h2 class="mb-3">Kontak Alpha Konstruksi Nusantara</h2>
-      <p>
+      <h2 class="mb-3" i18n="contact-h2">Kontak Alpha Konstruksi Nusantara</h2>
+      <p i18n="contact-p">
         Punya pertanyaan atau butuh bantuan? Kami di sini untuk membantu! Jangan
         ragu untuk menghubungi kami dengan pertanyaan atau keperluan apa pun.
         Tim kami di PT Alpha Konstruksi Nusantara siap memberikan dukungan dan
@@ -13,24 +13,29 @@
         membuat pengalaman Anda bersama kami lancar dan menyenangkan.
       </p>
 
-      <form [formGroup]="contactFormGroup">
+      <form [formGroup]="contactFormGroup" (ngSubmit)="submit()">
         <mat-form-field class="w-100" appearance="outline">
-          <mat-label>Nama</mat-label>
+          <mat-label i18n="contact-form-name">Nama</mat-label>
           <input matInput formControlName="name" />
         </mat-form-field>
 
         <mat-form-field class="w-100" appearance="outline">
-          <mat-label>Email</mat-label>
+          <mat-label i18n="contact-form-email">Email</mat-label>
           <input matInput formControlName="email" />
         </mat-form-field>
 
         <mat-form-field class="w-100" appearance="outline">
-          <mat-label>Pesan</mat-label>
+          <mat-label i18n="contact-form-message">Pesan</mat-label>
           <textarea matInput formControlName="message"></textarea>
         </mat-form-field>
 
-        <button class="submit-button">
-          <mat-icon>send</mat-icon>&nbsp;Kirimkan
+        <button
+          class="submit-button"
+          [disabled]="!contactFormGroup.valid || isLoading"
+        >
+          <mat-icon>send</mat-icon>&nbsp;<span i18n="contact-form-send"
+            >Kirimkan</span
+          >
         </button>
       </form>
     </div>

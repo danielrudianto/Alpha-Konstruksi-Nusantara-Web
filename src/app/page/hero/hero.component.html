@@ -1,13 +1,13 @@
-<div class="container mb-5">
+<div class="container mb-5" style="margin-top: 60px">
   <div class="row justify-content-center">
     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
       <h1>PT Alpha Konstruksi Nusantara</h1>
-      <h2>
+      <h2 i18n="hero-p-1">
         Menggali Lebih Dalam, Membangun Lebih Kokoh: Ahli Bored-Pile Terpercaya
         di Indonesia!
       </h2>
 
-      <p>
+      <p i18n="hero-p-2">
         Selamat datang di PT Alpha Konstruksi Nusantara, ahli kontraktor
         Bored-Pile terkemuka di Indonesia dengan pengalaman lebih dari satu
         dekade. Fondasi kami didasarkan pada keahlian, ketepatan, dan komitmen
@@ -15,7 +15,10 @@
         kita wujudkan fondasi yang kuat untuk kesuksesan Anda.
       </p>
       <!-- Create action button -->
-      <button class="action-button">Mulai sekarang</button>
+      <button class="action-button" [routerLink]="['/']" fragment="about">
+        <span i18n="hero-button-1">Mulai sekarang</span>
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
       <div class="row mt-5">
         <div class="col-12">
           <app-stats></app-stats>

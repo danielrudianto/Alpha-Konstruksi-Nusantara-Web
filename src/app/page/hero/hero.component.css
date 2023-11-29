@@ -24,8 +24,6 @@ p {
 .hero-image {
   width: 100%;
   aspect-ratio: 4/5;
-  -webkit-mask-image: url("/assets/images/hero-mask.svg");
-  mask-image: url("/assets/images/hero-mask.svg");
   background: url("/assets/images/hero-image.webp") no-repeat center center;
   background-size: contain;
   mask-position: center;
@@ -56,4 +54,12 @@ p {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.action-button mat-icon {
+  margin-left: 1.5rem;
 }

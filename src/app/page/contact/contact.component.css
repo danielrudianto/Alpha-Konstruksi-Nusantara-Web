@@ -36,3 +36,9 @@ p {
 .submit-button mat-icon {
   margin-right: 1.5rem;
 }
+
+.submit-button:disabled {
+  background-color: #bd925c;
+  opacity: 0.5;
+  cursor: not-allowed;
+}

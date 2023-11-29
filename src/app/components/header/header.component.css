@@ -1,8 +1,77 @@
 nav {
   position: sticky;
   top: 0;
-  padding: 0.5rem 0;
   background-color: white;
   z-index: 100;
-  height: 80px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.v-center {
+  display: flex;
+  align-items: center;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.lang-selector__flag {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+
+.lang-selector__dialog {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  display: none;
+}
+
+.lang-selector:hover .lang-selector__dialog {
+  display: block;
+}
+
+.lang-selector__dialog button {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #212529;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.lang-selector__dialog button:last-child {
+  border-bottom: none;
+}
+
+.lang-selector__dialog button:hover {
+  color: #212529;
+}
+
+.lang-selector__dialog button:disabled {
+  color: #dee2e6;
 }

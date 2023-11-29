@@ -2,6 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
+  "defaultProject": "alpha-konstruksi-nusantara-web",
   "projects": {
     "alpha-konstruksi-nusantara-web": {
       "projectType": "application",
@@ -13,7 +14,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/alpha-konstruksi-nusantara-web",
+            "outputPath": "dist/alpha-konstruksi-nusantara-web/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -38,8 +39,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -47,7 +48,8 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "localize": true
             },
             "development": {
               "buildOptimizer": false,
@@ -56,6 +58,21 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "en": {
+              "localize": ["en"],
+              "outputPath": "dist/alpha-konstruksi-nusantara-web",
+              "i18nMissingTranslation": "error"
+            },
+            "zh": {
+              "localize": ["zh"],
+              "outputPath": "dist/alpha-konstruksi-nusantara-web",
+              "i18nMissingTranslation": "error"
+            },
+            "id": {
+              "localize": ["id"],
+              "outputPath": "dist/alpha-konstruksi-nusantara-web",
+              "i18nMissingTranslation": "error"
             }
           },
           "defaultConfiguration": "production"
@@ -68,6 +85,15 @@
             },
             "development": {
               "browserTarget": "alpha-konstruksi-nusantara-web:build:development"
+            },
+            "en": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:en"
+            },
+            "zh": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:zh"
+            },
+            "id": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:id"
             }
           },
           "defaultConfiguration": "development"
@@ -97,6 +123,88 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/slick-carousel/slick/slick.min.js"
             ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/alpha-konstruksi-nusantara-web/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "localize": true,
+              "optimization": true
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            },
+            "en": {
+              "i18nMissingTranslation": "error"
+            },
+            "zh": {
+              "i18nMissingTranslation": "error"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:development",
+              "serverTarget": "alpha-konstruksi-nusantara-web:server:development"
+            },
+            "production": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:production",
+              "serverTarget": "alpha-konstruksi-nusantara-web:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": ["/"]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:production",
+              "serverTarget": "alpha-konstruksi-nusantara-web:server:production"
+            },
+            "development": {
+              "browserTarget": "alpha-konstruksi-nusantara-web:build:development",
+              "serverTarget": "alpha-konstruksi-nusantara-web:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      },
+      "i18n": {
+        "sourceLocale": {
+          "code": "id",
+          "baseHref": "/"
+        },
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": "/"
+          },
+          "zh": {
+            "translation": "src/locale/messages.zh.xlf",
+            "baseHref": "/"
           }
         }
       }
