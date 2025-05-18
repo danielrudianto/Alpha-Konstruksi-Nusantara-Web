@@ -13,7 +13,7 @@ const routerOptions: ExtraOptions = {
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':lang',
     component: LandingComponent,
     data: { animation: 'Home' },
     children: [
