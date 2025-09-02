@@ -1,0 +1,523 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>PT. Alpha Konstruksi Nusantara</title>
+    <link
+      crossorigin="anonymous"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      rel="stylesheet"
+    />
+    <link href="styles/style.css" rel="stylesheet" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link href="library/slick/slick.css" rel="stylesheet" type="text/css" />
+    <link
+      href="library/slick/slick-theme.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <meta
+      content="PT Alpha Konstruksi Nusantara adalah kontraktor bored pile terkemuka di Indonesia, menyediakan solusi fondasi kokoh dan teknologi konstruksi mutakhir."
+      name="description"
+    />
+    <meta
+      content="bored pile, konstruksi Indonesia, fondasi, stauss piling, teknologi konstruksi"
+      name="keywords"
+    />
+    <meta content="PT Alpha Konstruksi Nusantara" property="og:title" />
+    <meta
+      content="Kontraktor bored pile terpercaya di Indonesia dengan pengalaman lebih dari satu dekade."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta content="https://www.alphakonstruksi.id" property="og:url" />
+    <meta content="summary" name="twitter:card" />
+    <meta content="PT Alpha Konstruksi Nusantara" name="twitter:title" />
+    <meta
+      content="Solusi fondasi kokoh dan teknologi konstruksi mutakhir."
+      name="twitter:description"
+    />
+    <link href="https://www.alphakonstruksi.id" rel="canonical" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PT Alpha Konstruksi Nusantara",
+        "url": "https://www.alphakonstruksi.id",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-21-88898292",
+          "contactType": "Customer Service",
+          "email": "marketing@alphakonstruksi.id"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jakarta",
+          "addressCountry": "ID"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <nav class="nav px-5 py-3 shadow">
+      <ul class="nav">
+        <li class="nav-item">
+          <img height="40" src="assets/images/logo.png" />
+        </li>
+      </ul>
+    </nav>
+    <section id="hero">
+      <div class="container mb-5" style="margin-top: 60px">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+            <h1>PT Alpha Konstruksi Nusantara</h1>
+            <h2 i18n="hero-p-1">
+              Menggali Lebih Dalam, Membangun Lebih Kokoh: Ahli Bored-Pile
+              Terpercaya di Indonesia!
+            </h2>
+            <p i18n="hero-p-2">
+              Selamat datang di PT Alpha Konstruksi Nusantara, ahli kontraktor
+              Bored-Pile terkemuka di Indonesia dengan pengalaman lebih dari
+              satu dekade. Fondasi kami didasarkan pada keahlian, ketepatan, dan
+              komitmen untuk membangun proyek-proyek kokoh di seluruh tanah air.
+              Mari bersama kita wujudkan fondasi yang kuat untuk kesuksesan
+              Anda.
+            </p>
+            <!-- Create action button -->
+            <button class="action-button">
+              <span i18n="hero-button-1">Mulai sekarang</span>
+            </button>
+          </div>
+          <div class="col-xl-6 col-lg-6 d-lg-block d-none">
+            <div class="hero-carousel">
+              <div class="slide">
+                <img
+                  alt="Proyek bukit sari"
+                  src="assets/images/bukit-sari-01.webp"
+                  width="100%"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  alt="Proyek bukit sari"
+                  src="assets/images/bukit-sari-02.webp"
+                  width="100%"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  alt="Sekolah Citra Kasih Semarang"
+                  src="assets/images/sck-semarang-01.webp"
+                  width="100%"
+                />
+              </div>
+            </div>
+            <app-slide-pagination
+              [slide]="index"
+              [total]="3"
+            ></app-slide-pagination>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="about-wrapper">
+        <div class="container mb-5">
+          <div class="row justify-content-center">
+            <div
+              class="col-xl-6 col-lg-6 col-md-12 col-sm-10 col-12 d-flex align-items-stretch"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="about-image">
+                <img
+                  alt="Alpha Konstruksi Nusantara Engineer is showing the use of technology."
+                  class="w-100 my-auto"
+                  src="assets/images/tech.png"
+                />
+              </div>
+            </div>
+            <div
+              class="col-xl-6 col-lg-10 col-md-12 col-sm-10 col-12 d-flex align-items-stretch"
+              data-aos="fade-right"
+              style="flex-direction: column"
+            >
+              <h2 class="mb-3">Membangun dengan Teknologi Terkini</h2>
+              <p class="mb-5 dark">
+                PT Alpha Konstruksi Nusantara konsisten mengadopsi penggunaan
+                teknologi guna menjamin kualitas, keamanan, dan jadwal proyek.
+                Dengan tekad untuk selalu berinovasi, kami memasukkan teknologi
+                sebagai inti dari setiap aspek konstruksi kami. Pendekatan ini
+                tidak hanya memastikan hasil berkualitas tinggi tetapi juga
+                meningkatkan keamanan konstruksi dan mematuhi jadwal yang
+                ditetapkan. Dukungan teknologi tidak hanya menjadi landasan
+                operasional kami, tetapi juga mendorong efisiensi dan ketepatan
+                dalam setiap proyek. Kami yakin bahwa penggabungan konstruksi
+                dan teknologi adalah kunci untuk memberikan solusi terbaik bagi
+                pelanggan kami.
+              </p>
+              <div class="tech-stack__wrapper">
+                <div class="tech-carousel">
+                  <div class="slide">
+                    <img
+                      alt="Tensor Flow"
+                      src="assets/images/tech-stack/tf.png"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      alt="NVIDIA"
+                      src="assets/images/tech-stack/nvidia.png"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img alt="Keras" src="assets/images/tech-stack/keras.png" />
+                  </div>
+                  <div class="slide">
+                    <img
+                      alt="OpenCV"
+                      src="assets/images/tech-stack/opencv.png"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      alt="HikVision"
+                      src="assets/images/tech-stack/hv.png"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      alt="Google Cloud Platform"
+                      src="assets/images/tech-stack/gcp.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="video-wrapper">
+                <video
+                  autoplay=""
+                  id="myVideo"
+                  loop=""
+                  muted=""
+                  oncanplay="this.play()"
+                  onloadedmetadata="this.muted = true"
+                  playsinline=""
+                >
+                  <source
+                    src="assets/videos/Bore Piling.webm"
+                    type="video/webm"
+                  />
+                  <!-- <source src="assets/videos/Bore Piling.mp4" type="video/mp4" /> -->
+                  Your browser does not support the video tag
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="service">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12">
+            <h2 i18n="service-title">Jasa Kami</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-5">
+        <div class="row">
+          <div class="col-12 mb-3">
+            <button
+              class="animated-button active"
+              id="bore-button"
+              onclick="onServiceButtonClicked('bore-button')"
+            >
+              <span>Bored Piling</span>
+            </button>
+            <button
+              class="animated-button"
+              id="strauss-button"
+              onclick="onServiceButtonClicked('strauss-button')"
+            >
+              <span>Strauss Piling</span>
+            </button>
+            <button
+              class="animated-button"
+              id="horizontal-button"
+              onclick="onServiceButtonClicked('horizontal-button')"
+            >
+              <span>Horizontal Direct Drilling</span>
+            </button>
+          </div>
+          <div class="col-12">
+            <div class="service-carousel">
+              <div class="row d-flex justify-content-center">
+                <div
+                  class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-1 order-2"
+                >
+                  <h3 class="service-subtitle" i18n="bored-title">
+                    Bored Piling
+                  </h3>
+                  <p class="dark">
+                    Layanan bored piling kami membawa fondasi konstruksi Anda ke
+                    tingkat berikutnya. Dengan fokus pada ketepatan dan
+                    keandalan, kami menggunakan teknologi mutakhir dan tim ahli
+                    untuk menjalankan proyek boredpiling dengan keahlian tinggi.
+                    Dengan lebih dari satu dekade pengalaman di berbagai proyek
+                    di seluruh wilayah Indonesia, kami memahami betul kebutuhan
+                    unik setiap proyek. Fondasi kokoh yang kami hasilkan tidak
+                    hanya memenuhi standar tertinggi, tetapi juga memberikan
+                    dasar yang andal untuk kesuksesan proyek Anda.'
+                  </p>
+                </div>
+                <div
+                  class="col-xl-5 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-2 order-1"
+                >
+                  <img
+                    class="w-100 service-image"
+                    src="assets/images/sck-semarang-02.webp"
+                  />
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div
+                  class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-1 order-2"
+                >
+                  <h3 class="service-subtitle" i18n="strauss-title">
+                    Strauss Piling
+                  </h3>
+                  <p class="dark">
+                    Kami menyajikan layanan stauss piling dengan dedikasi tinggi
+                    untuk fondasi yang kuat dan tahan lama. Teknologi canggih
+                    dan tim ahli kami memastikan penerapan metode stauss piling
+                    yang efisien, memenuhi standar ketat, dan menghasilkan
+                    fondasi yang kokoh. Dengan pengalaman lebih dari satu
+                    dekade, kami telah menjadi pilihan utama dalam memberikan
+                    solusi fondasi yang andal untuk berbagai proyek konstruksi
+                    di seluruh Indonesia. Keunggulan kami terletak pada inovasi,
+                    ketepatan waktu, dan komitmen terhadap kepuasan pelanggan.
+                  </p>
+                </div>
+                <div
+                  class="col-xl-5 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-2 order-1"
+                >
+                  <img
+                    alt="Pondok Indah Project"
+                    class="w-100 service-image"
+                    src="assets/images/pondok-indah-01.webp"
+                  />
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center">
+                <div
+                  class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-1 order-2"
+                >
+                  <h3 class="service-subtitle" i18n="bored-title">
+                    Horizontal Direct Drilling (HDD)
+                  </h3>
+                  <p class="dark">
+                    Layanan Horizontal Directional Drilling (HDD) kami dirancang
+                    untuk memenuhi kebutuhan instalasi pipa dan kabel bawah
+                    tanah tanpa menggali secara terbuka. Metode ini sangat ideal
+                    untuk area padat, jalan aktif, atau lingkungan yang sensitif
+                    terhadap gangguan. Dengan teknologi pengeboran terkendali
+                    dan tim berpengalaman, kami memastikan akurasi lintasan
+                    pengeboran, efisiensi waktu, dan minimnya dampak terhadap
+                    permukaan tanah. HDD menjadi solusi unggulan dalam proyek
+                    infrastruktur modern yang membutuhkan pendekatan konstruksi
+                    non-destruktif dan presisi tinggi.
+                  </p>
+                </div>
+                <div
+                  class="col-xl-5 col-lg-10 col-md-12 col-sm-12 col-12 order-xl-2 order-1"
+                >
+                  <img
+                    class="w-100 service-image"
+                    src="assets/images/padang.webp"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="project">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="mb-3" i18n="project-h2">Proyek Sebelumnya</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="project-carousel">
+              <a
+                class="card mx-3"
+                href="projects/indah-kiat-pulp-paper.html"
+                style="text-decoration: none; color: black"
+              >
+                <div class="project-image-wrapper">
+                  <div
+                    class="project-image"
+                    style="
+                      background-image: url('assets/images/project/ikpp.webp');
+                    "
+                  ></div>
+                </div>
+                <div class="p-3">
+                  <p>Tangerang, Indonesia</p>
+                  <h3>Indah Kiat Pulp &amp; Paper</h3>
+                </div>
+              </a>
+              <a
+                class="card mx-3"
+                href="projects/jakarta-biopharmaceutical.html"
+                style="text-decoration: none; color: black"
+              >
+                <div class="project-image-wrapper">
+                  <div
+                    class="project-image"
+                    style="
+                      background-image: url('assets/images/project/jbio.webp');
+                    "
+                  ></div>
+                </div>
+                <div class="p-3">
+                  <p>Cikande, Indonesia</p>
+                  <h3>Jakarta Biopharmaceutical Industry</h3>
+                </div>
+              </a>
+              <a
+                class="card mx-3"
+                href="projects/australian-independent-school.html"
+                style="text-decoration: none; color: black"
+              >
+                <div class="project-image-wrapper">
+                  <div
+                    class="project-image"
+                    style="
+                      background-image: url('assets/images/project/ais.webp');
+                    "
+                  ></div>
+                </div>
+                <div class="p-3">
+                  <p>Jakarta, Indonesia</p>
+                  <h3>Australian Independent School</h3>
+                </div>
+              </a>
+              <a
+                class="card mx-3"
+                href="projects/sekolah-citra-kasih-semarang.html"
+                style="text-decoration: none; color: black"
+              >
+                <div class="project-image-wrapper">
+                  <div
+                    class="project-image"
+                    style="
+                      background-image: url('assets/images/project/sck-semarang.webp');
+                    "
+                  ></div>
+                </div>
+                <div class="p-3">
+                  <p>Semarang, Indonesia</p>
+                  <h3>Sekolah Citra Kasih Semarang</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-5" id="contact">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div
+            class="col-xl-6 col-lg-6 col-md-12 col-sm-10 col-12 d-flex align-items-stretch"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="about-image">
+              <img
+                alt="Pondok Indah Project"
+                class="w-100 service-image"
+                src="assets/images/contact_us.png"
+              />
+            </div>
+          </div>
+          <div
+            class="col-xl-6 col-lg-10 col-md-12 col-sm-10 col-12 d-flex align-items-stretch"
+            data-aos="fade-right"
+            style="flex-direction: column"
+          >
+            <h2 class="mb-3" i18n="contact-h2">
+              Kontak Alpha Konstruksi Nusantara
+            </h2>
+            <p class="dark">
+              Punya pertanyaan atau butuh bantuan? Kami di sini untuk membantu!
+              Jangan ragu untuk menghubungi kami dengan pertanyaan atau
+              keperluan apa pun. Tim kami di PT Alpha Konstruksi Nusantara siap
+              memberikan dukungan dan informasi yang Anda butuhkan. Kepuasan
+              Anda adalah prioritas kami, dan kami berharap dapat membantu Anda
+              dalam perjalanan konstruksi Anda. Silakan hubungi kami melalui
+              formulir di bawah ini, email, atau beri kami panggilan. Kami
+              menghargai kemitraan Anda dan berkomitmen untuk membuat pengalaman
+              Anda bersama kami lancar dan menyenangkan.
+            </p>
+            <p>
+              Email:
+              <a href="mailto:marketing@alphakonstruksi.id"
+                >marketing@alphakonstruksi.id</a
+              >
+            </p>
+            <p>Phone: <a href="tel:622188898292">(021) 88898292</a></p>
+          </div>
+          >
+        </div>
+      </div>
+    </section>
+    <footer
+      class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+    >
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <span class="mb-3 mb-md-0 text-body-secondary text-center"
+          >© 2025 PT. Alpha Konstruksi Nusantara</span
+        >
+      </div>
+    </footer>
+    <script
+      src="library/bootstrap/bootstrap.bundle.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="library/jquery/jquery-3.7.1.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="library/slick/slick.min.js" type="text/javascript"></script>
+    <script src="scripts/script.js" type="text/javascript"></script>
+  </body>
+</html>
