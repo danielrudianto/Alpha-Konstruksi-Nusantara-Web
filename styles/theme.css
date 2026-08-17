@@ -1,3 +1,25 @@
+/* — Font di-host sendiri. Menghapus round-trip ke fonts.googleapis.com (780 ms di
+     Slow 4G) yang dulu menahan render dan memicu CLS 0,394 di beranda mobile.
+     Subset ke Latin + 10 tanda baca yang benar-benar dipakai situs ini (~18 KB/berkas).
+     Metric override dihitung dengan fontTools terhadap Arial/Liberation Sans, DITIMBANG
+     dengan frekuensi karakter teks asli situs — heading dihitung dalam huruf besar
+     karena semuanya text-transform: uppercase. Memakai rata-rata a-z meleset 12 poin
+     dan teks tetap re-wrap saat swap. — */
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/barlow-400.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/barlow-600.woff2") format("woff2"); }
+@font-face { font-family: "Barlow"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/barlow-700.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 400; font-display: swap; src: url("../assets/fonts/barlow-condensed-400.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 600; font-display: swap; src: url("../assets/fonts/barlow-condensed-600.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-style: normal; font-weight: 700; font-display: swap; src: url("../assets/fonts/barlow-condensed-700.woff2") format("woff2"); }
+@font-face {
+  font-family: "Barlow Fallback"; src: local("Arial"), local("Helvetica Neue"), local("Liberation Sans"), local("Roboto");
+  size-adjust: 95.91%; ascent-override: 104.26%; descent-override: 20.85%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Barlow Condensed Fallback"; src: local("Arial Narrow"), local("Arial"), local("Helvetica Neue"), local("Liberation Sans"), local("Roboto");
+  size-adjust: 65.80%; ascent-override: 151.97%; descent-override: 30.39%; line-gap-override: 0%;
+}
+
 /* Industry — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
 
 :root {
@@ -40,9 +62,9 @@
   --color-accent-2-800: #314457;
   --color-accent-2-900: #1f2d3a;
 
-  --font-heading: "Barlow Condensed", system-ui, sans-serif;
+  --font-heading: "Barlow Condensed", "Barlow Condensed Fallback", system-ui, sans-serif;
   --font-heading-weight: 600;
-  --font-body: "Barlow", system-ui, sans-serif;
+  --font-body: "Barlow", "Barlow Fallback", system-ui, sans-serif;
 
   --space-1: 3.4px;
   --space-2: 6.8px;
@@ -148,9 +170,9 @@ figcaption {
 }
 .btn svg { display: block; }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
-.btn-primary { background: var(--color-accent); color: var(--color-bg); }
-.btn-primary:hover { background: var(--color-accent-600); }
-.btn-primary:active { background: var(--color-accent-700); }
+.btn-primary { background: var(--color-accent-700); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-800); }
+.btn-primary:active { background: var(--color-accent-900); }
 .btn-secondary { border-color: var(--color-divider); }
 .btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
 .btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
