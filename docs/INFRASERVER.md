@@ -79,6 +79,67 @@ baris `[debug]`, nol error sebenarnya. Selain memenuhi disk, debug logging
 memperlambat setiap permintaan dan menyimpan IP pengunjung mentah-mentah.
 Cadangan config: `/etc/nginx/nginx.conf.bak`.
 
+### Bersih-bersih disk
+
+Sebelum: **9,9 GB terpakai / 3,7 GB kosong (72%)**.
+Sesudah: **9,8 GB / 3,8 GB (73%)** — tapi angka itu sudah termasuk swapfile 2 GB
+yang tadinya tidak ada. Bersihnya sekitar **2,1 GB** yang dibebaskan, lalu 2 GB
+dipakai ulang untuk swap.
+
+| Dihapus | Ukuran |
+|---|---|
+| `/var/lib/mongodb` — data database yang sudah tidak dipakai | 505 MB |
+| `~/Alpha-Konstruksi-Nusantara-Human-Resource` — kode aplikasi HR | 285 MB |
+| `/var/www/terrabot/frontend-src/node_modules` — dibuat ulang oleh `npm ci` | 613 MB |
+| `/var/www/terrabot/frontend-src/dist` — salinan hasil build | 48 MB |
+| `/var/log/mongodb` | 342 MB |
+| Paket MongoDB (`mongodb-org*`, tools, shell, mongos) | 132 MB |
+| `/var/www/html/Alpha-Konstruksi-Nusantara-HR-Testing` — frontend HR | 18 MB |
+| journald diarsipkan, cache apt, arsip log nginx, btmp, syslog lama | ±180 MB |
+
+`node_modules` **akan kembali** pada deploy frontend berikutnya — itu pinjaman
+ruang, bukan penghematan permanen. Aman dihapus karena `deploy-fe.sh` memakai
+`npm ci` dan `package-lock.json` ada di repo.
+
+`pymongo==4.17.0` masih tercantum di `backend/requirements.txt` padahal tidak ada
+satu baris kode aplikasi pun yang memanggilnya. Sisa warisan; layak dicabut.
+
+Batas journald dipasang permanen di `/etc/systemd/journald.conf.d/ukuran.conf`
+(`SystemMaxUse=200M`) supaya tidak menumpuk lagi.
+
+### JANGAN dihapus
+
+- **`/var/www/html`** — bukan folder mati. `profilindah.id` disajikan dari
+  `/var/www/html/profil-indah-landing-page`. Menghapus `/var/www/html` mematikan
+  situs itu. Catatan lama yang menyebut folder ini "987 MB dan bisa dihapus"
+  sudah **kedaluwarsa** — isinya kini 24 MB dan sebagian aktif.
+- **`/var/www/terrabot/backend/env`** (421 MB) — venv Python yang sedang dipakai
+  proses di port 7500. Menghapusnya mematikan TerraBot seketika.
+- **`/var/www/terrabot/frontend`** (48 MB) — hasil build yang disajikan nginx.
+
+Selalu jalankan `sudo nginx -T | grep 'root '` sebelum menghapus folder mana pun
+di bawah `/var/www`.
+
+### Swap
+
+Sebelumnya **tidak ada swap sama sekali**. `deploy-fe.sh` sendiri memperingatkan
+bahwa build Angular butuh >2 GB RAM dan pada server kecil yang dibunuh OOM killer
+sering justru **MySQL**, bukan proses build — gejalanya menyesatkan karena yang
+mati bukan yang salah.
+
+```bash
+sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile
+sudo mkswap /swapfile && sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
+
+`vm.swappiness=10` dipasang di `/etc/sysctl.d/99-swappiness.conf` — bawaan Ubuntu
+`60` terlalu tinggi untuk server berdatabase; kernel akan memindahkan halaman MySQL
+ke disk padahal RAM masih ada, dan query jadi lambat tanpa sebab yang jelas.
+
+Percobaan pertama memakai 4 GB dan itu terlalu besar: sisa disk anjlok ke 1,8 GB
+(87%). 2 GB adalah kompromi yang dipakai sekarang.
+
 ---
 
 ## 4. Header keamanan — TERPASANG PENUH
@@ -243,7 +304,11 @@ Sisa 1 poin di mobile adalah jitter pengukuran, tidak layak dikejar.
    tidak merusak apa pun
 2. Ikat aplikasi python port 7500 ke `127.0.0.1`
 3. Periksa apakah instance `34.101.40.225` dan `34.101.133.52` masih ditagih di GCP
-4. `/var/www/html` (987 MB, situs lama) — jangan dihapus sebelum peta redirect
-   selesai; lihat `SERAH-TERIMA-WEB.md` bagian 7
+4. Cabut `pymongo` dari `backend/requirements.txt` — tidak dipakai kode aplikasi
 5. Pertimbangkan `access_log` per-vhost, atau `log_format` yang menyertakan `$host`,
    supaya lain kali bisa membuktikan sebuah situs benar-benar tidak dipakai
+6. `~/backup-hr-2026-08-17.tar.gz` (175 MB) — satu-satunya sisa kode aplikasi HR.
+   Unduh ke komputer lalu hapus dari server kalau ruang dibutuhkan.
+7. Deploy frontend TerraBot berikutnya akan menjalankan `npm ci` penuh
+   (`node_modules` sudah dihapus) — perlu koneksi ke registry dan beberapa menit
+   lebih lama dari biasanya. Ini normal, bukan tanda ada yang rusak.
